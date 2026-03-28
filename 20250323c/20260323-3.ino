@@ -16,7 +16,7 @@ void loop()
 {
   buttonState = digitalRead(2);
   if (buttonState == buttonDown) {
-    delay(20);
+    delay(debounceDelay);
     while ((digitalRead(2) == buttonDown)) {
     }
     ledstate = !ledstate;
