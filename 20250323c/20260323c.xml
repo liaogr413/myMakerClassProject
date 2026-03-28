@@ -1,0 +1,431 @@
+<xml xmlns="https://www.motoduino.com/">
+  <workspace>
+    <field name="DEVICE">uno</field>
+    <field name="VERSION">6.5.0</field>
+  </workspace>
+  <variables>
+    <variable id="mqVNdqJ*6JY~o/=}Saw!">buttonState</variable>
+    <variable id="R)2mJ0oFU#/f^Oa!V^A]">debounceDelay</variable>
+    <variable id=")W60Wa2c5~H:R8T^l?i[">clickCount</variable>
+    <variable id="^5xcllz2j^cPj9yV!rh+">ledstate</variable>
+    <variable id="c|aG]F[wDnJg+gJen^[R">buttonDown</variable>
+  </variables>
+  <block type="variables_declare_global" id="3_LkPUQ:$P#oHmBl^zTs" x="88" y="38">
+    <field name="VAR" id="mqVNdqJ*6JY~o/=}Saw!">buttonState</field>
+    <field name="TYPE">bool</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="f*HBU+oU0!yS.f08_|4f">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_declare_global" id="yLd|*J%w(MUH;I(hyy[J" x="88" y="63">
+    <field name="VAR" id="R)2mJ0oFU#/f^Oa!V^A]">debounceDelay</field>
+    <field name="TYPE">unsigned long</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="|;;BIFl66`B48Y,Vs`Uu">
+        <field name="NUM">20</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_declare_global" id="FSRr;FXOODd9sne}+^=m" x="87" y="88">
+    <field name="VAR" id=")W60Wa2c5~H:R8T^l?i[">clickCount</field>
+    <field name="TYPE">unsigned long</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="J~6#ZE;Mk}@ckPcJFzJ8">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_declare_global" id="aNMs*(p8%wAzXscMh^u-" x="88" y="113">
+    <field name="VAR" id="^5xcllz2j^cPj9yV!rh+">ledstate</field>
+    <field name="TYPE">bool</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="Ge;0(qW}WYSEzW2gmaK9">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_declare_global" id="0}ud4PSi.Cc:2~;Gu6rU" x="88" y="138">
+    <field name="VAR" id="c|aG]F[wDnJg+gJen^[R">buttonDown</field>
+    <field name="TYPE">bool</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="^VcxsK7l3`Uk2|NN}[]y">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="arduino_setup" id="@)33Hv}ftAcsTDju570E" x="87" y="163">
+    <statement name="MySetup">
+      <block type="serial_setup" id=".!ah]E.Y$q7y^Y5xc2MX">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="SERIAL_SPEED">115200</field>
+        <next>
+          <block type="inout_digital_write" id="%r6zsx5H=.]k^7E}KcmB">
+            <field name="PIN">11</field>
+            <field name="STAT">LOW</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="MyLoop">
+      <block type="variables_set" id="Em)vGk#!#?2Y7a|0vy^V">
+        <field name="VAR" id="mqVNdqJ*6JY~o/=}Saw!">buttonState</field>
+        <value name="VALUE">
+          <block type="inout_digital_read" id="%cIfNt7zWPKgeXrwrvBt">
+            <field name="PIN">2</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="BU:nuFGId5}=!!2G6PRX">
+            <value name="IF0">
+              <block type="logic_compare" id="HdCj#|@UOP.;3e_rvKS|">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="rd,yqm7u.k/-rJgzdxTD">
+                    <field name="VAR" id="mqVNdqJ*6JY~o/=}Saw!">buttonState</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="variables_get" id="EzNAA04h_Y)_#]4WSCul">
+                    <field name="VAR" id="c|aG]F[wDnJg+gJen^[R">buttonDown</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="delay_custom" id=")V^z(2-}}JJojZQ4[@O(">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="=j7KaOE.F8W[(v/TA.,,">
+                    <field name="NUM">20</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="do_while" id="apy|AFr1_lCzVBoHQ$KY">
+                    <value name="CONDI">
+                      <block type="logic_compare" id="k3)J`%^6rA)+=v;By*ju">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="inout_digital_read" id="PP21yN|,-gGsFu$28USu">
+                            <field name="PIN">2</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="D]{^c4$.v#u{3dvJ,.u]">
+                            <field name="VAR" id="c|aG]F[wDnJg+gJen^[R">buttonDown</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="EEY/OiY6.++qn$74]3q?">
+                        <field name="VAR" id="^5xcllz2j^cPj9yV!rh+">ledstate</field>
+                        <value name="VALUE">
+                          <block type="logic_negate" id="RB!wO$#/~5dJ/zsg{:0|">
+                            <value name="BOOL">
+                              <block type="variables_get" id="FDA6iM[KfFYI?0mi.hD,">
+                                <field name="VAR" id="^5xcllz2j^cPj9yV!rh+">ledstate</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="bei3L_n1yRZ9ZGqYEF6E">
+                            <field name="VAR" id=")W60Wa2c5~H:R8T^l?i[">clickCount</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="5SqIMDWI=DG[@72=GBN2">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <shadow xmlns="https://www.motoduino.com/" type="math_number" id="P6*P{@eglXhd!d$9w4HX">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="t:exTgfyFPiR+*1u(tJN">
+                                    <field name="VAR" id=")W60Wa2c5~H:R8T^l?i[">clickCount</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="^c4@n:ZNz.Rl%Vv2+zF(">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_printL" id="~8CPGQxqB+Ifcw#4/Ama">
+                                <field name="SERIAL_ID">Serial</field>
+                                <value name="CONTENT">
+                                  <block type="text" id="vAi[7-.))T#lC$QnGj3@">
+                                    <field name="TEXT">Click Count==</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="serial_print" id="mtUeyZM:7V}oLy9LP.!1">
+                                    <field name="SERIAL_ID">Serial</field>
+                                    <value name="CONTENT">
+                                      <block type="variables_get" id="}kQQjbTc^$+IXS=l5lFY">
+                                        <field name="VAR" id=")W60Wa2c5~H:R8T^l?i[">clickCount</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="controls_if" id="$,[MO)nqW;?=6_*0+}GO">
+                                        <mutation elseif="4"></mutation>
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="(|Sa}ZW[7,b+CK%FMyJ?">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="math_modulo" id="TKfisu.QWLDblIU1o(W}">
+                                                <value name="DIVIDEND">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number" id=":T;(Ar%4P|}Iy@A5S9f9">
+                                                    <field name="NUM">64</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="Qt%4?DTEOrj1yWte}a{4">
+                                                    <field name="VAR" id=")W60Wa2c5~H:R8T^l?i[">clickCount</field>
+                                                  </block>
+                                                </value>
+                                                <value name="DIVISOR">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number" id="[dqtEmvF)YIo~j8/4_Te">
+                                                    <field name="NUM">10</field>
+                                                  </shadow>
+                                                  <block type="math_number" id="X954=UiaCMr8cEf6wA69">
+                                                    <field name="NUM">5</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="WBfxwQ7p,;|,e|+tQGxs">
+                                                <field name="NUM">1</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="inout_digital_write" id="=6xwULLpgP:Ax3B6M3Oi">
+                                            <field name="PIN">9</field>
+                                            <field name="STAT">HIGH</field>
+                                            <next>
+                                              <block type="inout_digital_write" id=")6gPH:++VZ7.ve}D{7d1">
+                                                <field name="PIN">10</field>
+                                                <field name="STAT">LOW</field>
+                                                <next>
+                                                  <block type="inout_digital_write" id="}})Hr?4uJuz*0UGh)Q03">
+                                                    <field name="PIN">11</field>
+                                                    <field name="STAT">LOW</field>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <value name="IF1">
+                                          <block type="logic_compare" id=",;9]Q9)wG?tKYv?/*L;!">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="math_modulo" id="x8QyIo*~1qMa:^V,YjVy">
+                                                <value name="DIVIDEND">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number">
+                                                    <field name="NUM">64</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="@2:Pp=CE;N$JaEsL@o$/">
+                                                    <field name="VAR" id=")W60Wa2c5~H:R8T^l?i[">clickCount</field>
+                                                  </block>
+                                                </value>
+                                                <value name="DIVISOR">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number">
+                                                    <field name="NUM">10</field>
+                                                  </shadow>
+                                                  <block type="math_number" id=":Rla/=5^nss1eO`5{AIB">
+                                                    <field name="NUM">5</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="cMa(n}5}:Xs[O%d!tU43">
+                                                <field name="NUM">2</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO1">
+                                          <block type="inout_digital_write" id="qdgahs=G]}iL_5[HFNbE">
+                                            <field name="PIN">9</field>
+                                            <field name="STAT">LOW</field>
+                                            <next>
+                                              <block type="inout_digital_write" id="JXRMFqt.5?]2jZfDaeK^">
+                                                <field name="PIN">10</field>
+                                                <field name="STAT">HIGH</field>
+                                                <next>
+                                                  <block type="inout_digital_write" id="BoN6K,--)XiJZYp4A/3|">
+                                                    <field name="PIN">11</field>
+                                                    <field name="STAT">LOW</field>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <value name="IF2">
+                                          <block type="logic_compare" id="C#U8a?8?+|AQoFBEe(3@">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="math_modulo" id="!01+sY!RN}zqFNo?lM3{">
+                                                <value name="DIVIDEND">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number">
+                                                    <field name="NUM">64</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="Gq`[S^v]9$k@T9[{D1,p">
+                                                    <field name="VAR" id=")W60Wa2c5~H:R8T^l?i[">clickCount</field>
+                                                  </block>
+                                                </value>
+                                                <value name="DIVISOR">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number">
+                                                    <field name="NUM">10</field>
+                                                  </shadow>
+                                                  <block type="math_number" id="L^0!g@S~089[;J+pwUqv">
+                                                    <field name="NUM">5</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="lek;bQ%+_mzA~eqv2tfW">
+                                                <field name="NUM">3</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO2">
+                                          <block type="inout_digital_write" id="Q?B1yD|8w%}6C{hAt#_P">
+                                            <field name="PIN">9</field>
+                                            <field name="STAT">LOW</field>
+                                            <next>
+                                              <block type="inout_digital_write" id="MmU~v=vWBG@V(G_]CakB">
+                                                <field name="PIN">10</field>
+                                                <field name="STAT">LOW</field>
+                                                <next>
+                                                  <block type="inout_digital_write" id="IQ_EpE0zL-;Ar{fB^[+}">
+                                                    <field name="PIN">11</field>
+                                                    <field name="STAT">HIGH</field>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <value name="IF3">
+                                          <block type="logic_compare" id="AZQOff#G6_;8mw~F11X~">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="math_modulo" id="/8N1RINo,;`@Z(I!,53h">
+                                                <value name="DIVIDEND">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number">
+                                                    <field name="NUM">64</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="7{diLj-Bjv9e0Br_k7O8">
+                                                    <field name="VAR" id=")W60Wa2c5~H:R8T^l?i[">clickCount</field>
+                                                  </block>
+                                                </value>
+                                                <value name="DIVISOR">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number">
+                                                    <field name="NUM">10</field>
+                                                  </shadow>
+                                                  <block type="math_number" id="tBSo9]JpR}{~vqvWngJy">
+                                                    <field name="NUM">5</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="x4tAE)_Tu7:R2JGqw,2(">
+                                                <field name="NUM">4</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO3">
+                                          <block type="inout_digital_write" id="SzxlCKf!rnqN{3=kLL*k">
+                                            <field name="PIN">9</field>
+                                            <field name="STAT">HIGH</field>
+                                            <next>
+                                              <block type="inout_digital_write" id="8~a[ONu1R$c[;iY0Zd77">
+                                                <field name="PIN">11</field>
+                                                <field name="STAT">HIGH</field>
+                                                <next>
+                                                  <block type="inout_digital_write" id="Sku}d1=8T(3L0,yRn-B+">
+                                                    <field name="PIN">10</field>
+                                                    <field name="STAT">HIGH</field>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <value name="IF4">
+                                          <block type="logic_compare" id="uI(y5luP({4le6I(87Md">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="math_modulo" id="TF;Ynpcv=O2Mi8@aMzA2">
+                                                <value name="DIVIDEND">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number">
+                                                    <field name="NUM">64</field>
+                                                  </shadow>
+                                                  <block type="variables_get" id="Ln$#2yho~9_^J-h;]x8Q">
+                                                    <field name="VAR" id=")W60Wa2c5~H:R8T^l?i[">clickCount</field>
+                                                  </block>
+                                                </value>
+                                                <value name="DIVISOR">
+                                                  <shadow xmlns="https://www.motoduino.com/" type="math_number">
+                                                    <field name="NUM">10</field>
+                                                  </shadow>
+                                                  <block type="math_number" id="xfFF?F^CMI-dqba.uKWP">
+                                                    <field name="NUM">5</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="math_number" id="b7z/Xy96eG+9=Dz6:_r{">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO4">
+                                          <block type="inout_digital_write" id="B[?V92dl4W$rcS$J?auV">
+                                            <field name="PIN">9</field>
+                                            <field name="STAT">LOW</field>
+                                            <next>
+                                              <block type="inout_digital_write" id="#ov;GH72aS+RU=p`=]1,">
+                                                <field name="PIN">10</field>
+                                                <field name="STAT">LOW</field>
+                                                <next>
+                                                  <block type="inout_digital_write" id="pa;9SC^Dsma%TSzJW|gS">
+                                                    <field name="PIN">11</field>
+                                                    <field name="STAT">LOW</field>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
