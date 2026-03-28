@@ -1,6 +1,6 @@
 bool  buttonState=0;
-unsigned long  debounceDelay=0;
-unsigned long  clickCount=20;
+unsigned long  debounceDelay=20;
+unsigned long  clickCount=0;
 bool  ledstate=0;
 bool  buttonDown=1;
 void setup()
