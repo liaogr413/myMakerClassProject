@@ -1,17 +1,13 @@
 unsigned int  VRX=0;
 unsigned int  VRY=0;
 bool  SW=0;
-
 void setup()
 {
   Serial.begin(115200);
   pinMode(A0, INPUT);
   pinMode(A1, INPUT);
   pinMode(2, INPUT_PULLUP);
-
 }
-
-
 void loop()
 {
   VRX = analogRead(A0);
@@ -29,5 +25,4 @@ void loop()
     Serial.println(",Button Up");
   }
   delay(200);
-
 }
