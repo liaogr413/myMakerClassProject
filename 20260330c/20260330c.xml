@@ -1,0 +1,159 @@
+<xml xmlns="https://www.motoduino.com/">
+  <workspace>
+    <field name="DEVICE">uno</field>
+    <field name="VERSION">6.5.0</field>
+  </workspace>
+  <variables>
+    <variable id="Ui41[gcXEd!zop7CHS#R">VRX</variable>
+    <variable id="MyZ4r8n7,c;@iSgW|193">VRY</variable>
+    <variable id="CC`nUXDVcp`Cd1KwLmEn">SW</variable>
+    <variable id="u[8z$1HzjB(w${1ukCq2">XClick</variable>
+  </variables>
+  <block type="variables_declare_global" id="0?!^aE)=T@C_PR,V[YkV" x="188" y="63">
+    <field name="VAR" id="Ui41[gcXEd!zop7CHS#R">VRX</field>
+    <field name="TYPE">unsigned int</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="!Zf3z|7}hDJ|lAzl^r,u">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_declare_global" id="daFVRWQuuts0fMg0a0by" x="188" y="88">
+    <field name="VAR" id="MyZ4r8n7,c;@iSgW|193">VRY</field>
+    <field name="TYPE">unsigned int</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="J%19[;*l0IGu~P-p,Yxw">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_declare_global" id="?gY]0zz#@~tT[o`BqLMf" x="188" y="113">
+    <field name="VAR" id="CC`nUXDVcp`Cd1KwLmEn">SW</field>
+    <field name="TYPE">bool</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="+7O^$}q5}/Yq,|2:J.r6">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_declare_global" id="Lwk~y^:)*@erT=-OE-)#" x="188" y="138">
+    <field name="VAR" id="u[8z$1HzjB(w${1ukCq2">XClick</field>
+    <field name="TYPE">bool</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="jvGs~*+CU*ZE^R~3.C)A">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="arduino_setup" id="gLkm~24T-ZA$h8c/k2_T" x="188" y="213">
+    <statement name="MySetup">
+      <block type="serial_setup" id="P/}rjKB9VCa4Z^P?oj`8">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="SERIAL_SPEED">115200</field>
+      </block>
+    </statement>
+    <statement name="MyLoop">
+      <block type="variables_set" id="/S^GBz|i={xe/Yo5Q$z1">
+        <field name="VAR" id="Ui41[gcXEd!zop7CHS#R">VRX</field>
+        <value name="VALUE">
+          <block type="inout_analog_read" id="p$OJl7/I_HNxgAR!mY^M">
+            <field name="PIN">A0</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_printL" id="TCG.fk:,[V?#bH3]dZZw">
+            <field name="SERIAL_ID">Serial</field>
+            <value name="CONTENT">
+              <block type="text" id="7z]~)54coGQ1MJ4mEns^">
+                <field name="TEXT">,X==</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_printL" id="9MuKF_;j#FNTs%P-JGp}">
+                <field name="SERIAL_ID">Serial</field>
+                <value name="CONTENT">
+                  <block type="variables_get" id="J:i4,XEo7S]r3D4z`/?S">
+                    <field name="VAR" id="Ui41[gcXEd!zop7CHS#R">VRX</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="}p}nDse$;GMZ`Sja1-tj">
+                    <field name="VAR" id="Ui41[gcXEd!zop7CHS#R">VRX</field>
+                    <value name="VALUE">
+                      <block type="base_map" id="g]AT^FSxHRJn_)FV)N*(">
+                        <value name="NUM">
+                          <block type="variables_get" id="=N61vEEjRJj(aA~oTO(g">
+                            <field name="VAR" id="Ui41[gcXEd!zop7CHS#R">VRX</field>
+                          </block>
+                        </value>
+                        <value name="AMIN">
+                          <shadow type="math_number" id="oU],xBCZ+xLoXs/Y6bhb">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="AMAX">
+                          <shadow type="math_number" id="cFD}LlH~?BsTh:}c0Z7l">
+                            <field name="NUM">1023</field>
+                          </shadow>
+                        </value>
+                        <value name="DMIN">
+                          <shadow type="math_number" id="-ti/zBQUYH1-H,L+,rl2">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="DMAX">
+                          <shadow type="math_number" id="G3jYGZMQHC#[TJ}JgO[t">
+                            <field name="NUM">255</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="inout_analog_write" id="S?WXXdlzFBh5:HmcsOfa">
+                        <field name="PIN">9</field>
+                        <value name="Value">
+                          <block type="variables_get" id="xz=zw50yZjrDXf+4BJ_J">
+                            <field name="VAR" id="Ui41[gcXEd!zop7CHS#R">VRX</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_printL" id="~}L!5fHIXdV6Y4s/rZUG">
+                            <field name="SERIAL_ID">Serial</field>
+                            <value name="CONTENT">
+                              <block type="text" id="xUEvmAFXZ![ttf8`@SNX">
+                                <field name="TEXT">,PWM==</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_print" id="ylK@SqlXmFQNz|-pT4Fu">
+                                <field name="SERIAL_ID">Serial</field>
+                                <value name="CONTENT">
+                                  <block type="variables_get" id="j0a57X*wQT[zP1NeRyp$">
+                                    <field name="VAR" id="Ui41[gcXEd!zop7CHS#R">VRX</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="delay_custom" id="iU.vxRRjYF/swTH{g{^;">
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id="dcGKU@Z(6Wj;tq~{=sJ{">
+                                        <field name="NUM">100</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
