@@ -15,31 +15,40 @@ void setup()
 void loop()
 {
   buttonState = digitalRead(2);
-  if (buttonState == buttonDown) {
+  if (buttonState == buttonDown) 
+  {
     delay(debounceDelay);
-    while ((digitalRead(2) == buttonDown)) {
-    }
+    while ((digitalRead(2) == buttonDown)) {}
     ledstate = !ledstate;
     clickCount = clickCount + 1;
     Serial.print("Click Count==");
     Serial.println(clickCount);
-    if (clickCount % 5 == 1) {
+    if (clickCount % 5 == 1) 
+    {
       digitalWrite(9,HIGH);
       digitalWrite(10,LOW);
       digitalWrite(11,LOW);
-    } else if (clickCount % 5 == 2) {
+    } 
+    else if (clickCount % 5 == 2) 
+    {
       digitalWrite(9,LOW);
       digitalWrite(10,HIGH);
       digitalWrite(11,LOW);
-    } else if (clickCount % 5 == 3) {
+    } 
+    else if (clickCount % 5 == 3) 
+    {
       digitalWrite(9,LOW);
       digitalWrite(10,LOW);
       digitalWrite(11,HIGH);
-    } else if (clickCount % 5 == 4) {
+    } 
+    else if (clickCount % 5 == 4) 
+    {
       digitalWrite(9,HIGH);
       digitalWrite(11,HIGH);
       digitalWrite(10,HIGH);
-    } else if (clickCount % 5 == 0) {
+    } 
+    else if (clickCount % 5 == 0) 
+    {
       digitalWrite(9,LOW);
       digitalWrite(10,LOW);
       digitalWrite(11,LOW);
