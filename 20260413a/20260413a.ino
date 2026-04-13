@@ -1,5 +1,4 @@
 float  distance=0;
-
 void setup()
 {
   Serial.begin(115200);
@@ -7,10 +6,7 @@ void setup()
   pinMode(6,OUTPUT);
   pinMode(7,INPUT);
   digitalWrite(9,LOW);
-
 }
-
-
 void loop()
 {
   digitalWrite(9,HIGH);
@@ -20,7 +16,6 @@ void loop()
   Serial.println("cm");
   digitalWrite(9,LOW);
   delay(10);
-
 }
 float ultrasonic_distance_6_7() {
   digitalWrite(6, LOW);
