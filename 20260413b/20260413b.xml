@@ -1,0 +1,167 @@
+<xml xmlns="https://www.motoduino.com/">
+  <workspace>
+    <field name="DEVICE">uno</field>
+    <field name="VERSION">6.5.0</field>
+  </workspace>
+  <variables>
+    <variable id="U^8$UY?Y_{)s{3qP3U!l">object_distance</variable>
+    <variable id="2X7@/;Q6glMI.,Ae~g1N">echo_time_us</variable>
+    <variable id="UP[~1=^%M!3#tz6j3K%J">sound_speed</variable>
+  </variables>
+  <block type="variables_declare_global" id="G!N(JW~DjrL2NWvbU9MD" x="187" y="187">
+    <field name="VAR" id="U^8$UY?Y_{)s{3qP3U!l">object_distance</field>
+    <field name="TYPE">float</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="0vkC~Retn+dM7ZY.q3cH">
+        <field name="NUM">30</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_declare_global" id="l5ldwiE(;]wVTvU!6)EV" x="188" y="213">
+    <field name="VAR" id="2X7@/;Q6glMI.,Ae~g1N">echo_time_us</field>
+    <field name="TYPE">long</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="tTM=C+BdB-t;x{i;(*Yd">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="variables_declare_global" id="y6({RHY{#it7)5pdClzp" x="188" y="238">
+    <field name="VAR" id="UP[~1=^%M!3#tz6j3K%J">sound_speed</field>
+    <field name="TYPE">float</field>
+    <value name="VALUE">
+      <shadow type="math_number" id=":HbLwH^pZy!L2~qPnw]*">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="arduino_setup" id="llP73g16pa,6+%$2Lww`" x="163" y="363">
+    <statement name="MySetup">
+      <block type="serial_setup" id=":rLlFfx|p?K6IdT9%jrq">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="SERIAL_SPEED">115200</field>
+        <next>
+          <block type="inout_digital_write" id="zRU:*u+zDXrw7(G|mYIw">
+            <field name="PIN">13</field>
+            <field name="STAT">LOW</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="MyLoop">
+      <block type="inout_digital_write" id="_!zK8R9I98N^Q(pVXiS~">
+        <field name="PIN">13</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="variables_set" id="w7YIO+Gq@};,)=7Wi$cY">
+            <field name="VAR" id="2X7@/;Q6glMI.,Ae~g1N">echo_time_us</field>
+            <value name="VALUE">
+              <block type="ultrasonic_distance" id="2;l%B./lArbR~@@^Hc1`">
+                <field name="TRIG">6</field>
+                <field name="ECHO">7</field>
+                <field name="UNIT">CM</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="wjwJWq@Ow$}1Vc2x`79v">
+                <field name="VAR" id="UP[~1=^%M!3#tz6j3K%J">sound_speed</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="%gdWb?[*e3p@X=U$B=*d">
+                    <field name="OP">MULTIPLY</field>
+                    <value name="A">
+                      <shadow type="math_number" id="30Gsp-iw(GB^o%T==^`r">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="math_arithmetic" id="={b2]YHQO;/~6@T6}~H^">
+                        <field name="OP">DIVIDE</field>
+                        <value name="A">
+                          <shadow type="math_number" id="HHls6DvLmjG*j=p2-utb">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="Y_%XO2*`0]KmCG@CSnkp">
+                            <field name="VAR" id="U^8$UY?Y_{)s{3qP3U!l">object_distance</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="hZos02(moOp7i:}0hb:T">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="math_arithmetic" id="mm@.U58|qvlxjr4FUVhV">
+                            <field name="OP">DIVIDE</field>
+                            <value name="A">
+                              <shadow type="math_number" id="zP:V7/H:t=r6IPdY/T`R">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="8gD?UHhOjExNrULzT(0?">
+                                <field name="VAR" id="2X7@/;Q6glMI.,Ae~g1N">echo_time_us</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="H|i:[?R$`%!g;=]{,~5}">
+                                <field name="NUM">2</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="%}}L|dzF{jf)BybPRbke">
+                        <field name="NUM">10000</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_printL" id="~$8*`gK]ipSI#[CPoy$+">
+                    <field name="SERIAL_ID">Serial</field>
+                    <value name="CONTENT">
+                      <block type="text" id="y7F}4f~D$haer$.z@}[2">
+                        <field name="TEXT">聲波速率==</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_printL" id="a%Hp8$H_*|(6V7|Z7iM_">
+                        <field name="SERIAL_ID">Serial</field>
+                        <value name="CONTENT">
+                          <block type="variables_get" id="nqgk;8nc{`9-r5)q-3xz">
+                            <field name="VAR" id="UP[~1=^%M!3#tz6j3K%J">sound_speed</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_print" id="L=?9;XlE}:$CDKs{n8LJ">
+                            <field name="SERIAL_ID">Serial</field>
+                            <value name="CONTENT">
+                              <block type="text" id="{Nq:`c$P^fHZC=f@t?an">
+                                <field name="TEXT">m/s</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="inout_digital_write" id="+KC_StZ@)^~gf+zL,aPK">
+                                <field name="PIN">13</field>
+                                <field name="STAT">LOW</field>
+                                <next>
+                                  <block type="delay_custom" id="yS7W_IJ~/q+41AF[R]BS">
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id="!XmF*%usF!(Cqso@s;|N">
+                                        <field name="NUM">1000</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
