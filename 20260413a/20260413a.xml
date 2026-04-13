@@ -1,0 +1,95 @@
+<xml xmlns="https://www.motoduino.com/">
+  <workspace>
+    <field name="DEVICE">uno</field>
+    <field name="VERSION">6.5.0</field>
+  </workspace>
+  <variables>
+    <variable id="i|}|rx%YfvA.J0NM^ddt">distance</variable>
+  </variables>
+  <block type="variables_declare_global" id=":hYft=t(=vhv/?+FZyVs" x="138" y="263">
+    <field name="VAR" id="i|}|rx%YfvA.J0NM^ddt">distance</field>
+    <field name="TYPE">float</field>
+    <value name="VALUE">
+      <shadow type="math_number" id="#7oel;;7a-z]P88Tue!@">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="arduino_setup" id="llP73g16pa,6+%$2Lww`" x="138" y="288">
+    <statement name="MySetup">
+      <block type="serial_setup" id=":rLlFfx|p?K6IdT9%jrq">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="SERIAL_SPEED">115200</field>
+        <next>
+          <block type="inout_digital_write" id="zRU:*u+zDXrw7(G|mYIw">
+            <field name="PIN">9</field>
+            <field name="STAT">LOW</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="MyLoop">
+      <block type="inout_digital_write" id="_!zK8R9I98N^Q(pVXiS~">
+        <field name="PIN">9</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="variables_set" id="w7YIO+Gq@};,)=7Wi$cY">
+            <field name="VAR" id="i|}|rx%YfvA.J0NM^ddt">distance</field>
+            <value name="VALUE">
+              <block type="ultrasonic_distance" id="2;l%B./lArbR~@@^Hc1`">
+                <field name="TRIG">6</field>
+                <field name="ECHO">7</field>
+                <field name="UNIT">CM</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_printL" id="~$8*`gK]ipSI#[CPoy$+">
+                <field name="SERIAL_ID">Serial</field>
+                <value name="CONTENT">
+                  <block type="text" id="y7F}4f~D$haer$.z@}[2">
+                    <field name="TEXT">距離==</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_printL" id="a%Hp8$H_*|(6V7|Z7iM_">
+                    <field name="SERIAL_ID">Serial</field>
+                    <value name="CONTENT">
+                      <block type="variables_get" id="nqgk;8nc{`9-r5)q-3xz">
+                        <field name="VAR" id="i|}|rx%YfvA.J0NM^ddt">distance</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_print" id="L=?9;XlE}:$CDKs{n8LJ">
+                        <field name="SERIAL_ID">Serial</field>
+                        <value name="CONTENT">
+                          <block type="text" id="{Nq:`c$P^fHZC=f@t?an">
+                            <field name="TEXT">cm</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="inout_digital_write" id="+KC_StZ@)^~gf+zL,aPK">
+                            <field name="PIN">9</field>
+                            <field name="STAT">LOW</field>
+                            <next>
+                              <block type="delay_custom" id="yS7W_IJ~/q+41AF[R]BS">
+                                <value name="DELAY_TIME">
+                                  <block type="math_number" id="!XmF*%usF!(Cqso@s;|N">
+                                    <field name="NUM">1000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
