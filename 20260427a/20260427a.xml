@@ -1,0 +1,180 @@
+<xml xmlns="https://www.motoduino.com/">
+  <workspace>
+    <field name="DEVICE">nano</field>
+    <field name="VERSION">6.5.0</field>
+  </workspace>
+  <block type="arduino_setup" id=";!.b_?zyS{AJjP4W9[)^" x="163" y="63">
+    <statement name="MyLoop">
+      <block type="inout_digital_write" id=",+ph@^|/k4+|a6C!*_1d">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_digital_write" id="GX}ao!RAAT=p6/A,=nJ$">
+            <field name="PIN">3</field>
+            <field name="STAT">LOW</field>
+            <next>
+              <block type="delay_custom" id="B8suSmaD~QJ::lT0#e`;">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="IY=W!;X~o%YO!iGk4:_;">
+                    <field name="NUM">10000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="inout_digital_write" id="M_obTpf65dzO:h_^tr);">
+                    <field name="PIN">2</field>
+                    <field name="STAT">LOW</field>
+                    <next>
+                      <block type="inout_digital_write" id="Bn2Fr1Kw|E8s[@.[6y(o">
+                        <field name="PIN">3</field>
+                        <field name="STAT">LOW</field>
+                        <next>
+                          <block type="delay_custom" id="hG?6Bj#^cw6hP)2B7M73">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="OEfgi.q,(MzV9]mLNIG!">
+                                <field name="NUM">2000</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="inout_digital_write" id="-IlMKFI@UhyAtgZ,pzd8">
+                                <field name="PIN">2</field>
+                                <field name="STAT">LOW</field>
+                                <next>
+                                  <block type="inout_digital_write" id="(6w`;P!VPdz?4HQrlU/}">
+                                    <field name="PIN">3</field>
+                                    <field name="STAT">HIGH</field>
+                                    <next>
+                                      <block type="delay_custom" id="4td6TlL4^ga$|m#N:#=[">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="3u%1mwmd4z@nk4rm78/t">
+                                            <field name="NUM">10000</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="inout_digital_write" id="6g=7]#u#PD-|,}.u@Uq,">
+                                            <field name="PIN">2</field>
+                                            <field name="STAT">LOW</field>
+                                            <next>
+                                              <block type="inout_digital_write" id="8]7E1U^3QrX2(Cfj/Ff3">
+                                                <field name="PIN">3</field>
+                                                <field name="STAT">LOW</field>
+                                                <next>
+                                                  <block type="delay_custom" id="|Fb|nLfaznGbgGUge#yp">
+                                                    <comment pinned="false" h="80" w="160">LEFT</comment>
+                                                    <value name="DELAY_TIME">
+                                                      <block type="math_number" id="+4~xP*4/*oI5{76vFsci">
+                                                        <field name="NUM">2000</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="inout_digital_write" id="z7xYT:m)}=cK2+swv3MF">
+                                                        <field name="PIN">4</field>
+                                                        <field name="STAT">HIGH</field>
+                                                        <next>
+                                                          <block type="inout_digital_write" id="2}ATWB`5xP[Kxd6nu!;j">
+                                                            <field name="PIN">5</field>
+                                                            <field name="STAT">LOW</field>
+                                                            <next>
+                                                              <block type="delay_custom" id="52i=b0*%rgico:*jx(z.">
+                                                                <value name="DELAY_TIME">
+                                                                  <block type="math_number" id="#|(%/lBsO+u/xAnXKGz*">
+                                                                    <field name="NUM">10000</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="inout_digital_write" id="f720-Cd+M._;rRte~Aq]">
+                                                                    <field name="PIN">4</field>
+                                                                    <field name="STAT">LOW</field>
+                                                                    <next>
+                                                                      <block type="inout_digital_write" id="4]1OQ+W{?baY%2M|iw~C">
+                                                                        <field name="PIN">5</field>
+                                                                        <field name="STAT">LOW</field>
+                                                                        <next>
+                                                                          <block type="delay_custom" id="V1vwJbO9NM;.S5H~nw=w">
+                                                                            <value name="DELAY_TIME">
+                                                                              <block type="math_number" id="E!8SF,OK{hh!yHc?,drf">
+                                                                                <field name="NUM">2000</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="inout_digital_write" id="=Pno8{}ez-yj9h)~FwP,">
+                                                                                <field name="PIN">4</field>
+                                                                                <field name="STAT">LOW</field>
+                                                                                <next>
+                                                                                  <block type="inout_digital_write" id="c.*uB(p+aOTPQQxv=~b{">
+                                                                                    <field name="PIN">5</field>
+                                                                                    <field name="STAT">HIGH</field>
+                                                                                    <next>
+                                                                                      <block type="delay_custom" id="5esFvM1vwJZq;mR(1f5C">
+                                                                                        <value name="DELAY_TIME">
+                                                                                          <block type="math_number" id="N0`cU?dWOkk`h_%vv}0h">
+                                                                                            <field name="NUM">10000</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="inout_digital_write" id="KULuY7|{1~:nmxkbwv6b">
+                                                                                            <field name="PIN">4</field>
+                                                                                            <field name="STAT">LOW</field>
+                                                                                            <next>
+                                                                                              <block type="inout_digital_write" id="jT|ERS^#byWYB^rnbi}/">
+                                                                                                <field name="PIN">5</field>
+                                                                                                <field name="STAT">LOW</field>
+                                                                                                <next>
+                                                                                                  <block type="delay_custom" id="ylXE1~E36@Sx%kED[w3t">
+                                                                                                    <value name="DELAY_TIME">
+                                                                                                      <block type="math_number" id="U.!Y,r|H_nWpIB24tc@[">
+                                                                                                        <field name="NUM">2000</field>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="math_number" id="m5OBGJR;)BW7dc9CFO5i" disabled="true" x="220" y="609">
+    <field name="NUM">2000</field>
+  </block>
+</xml>
