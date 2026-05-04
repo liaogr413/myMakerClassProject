@@ -56,13 +56,13 @@ void Right()
   digitalWrite(2,HIGH);
   analogWrite(3,63);
   digitalWrite(4,LOW);
-  analogWrite(5,63);
+  analogWrite(5,0);
 }
 // 定義左轉
 void Left()
 {
   digitalWrite(2,LOW);
-  analogWrite(3,63);
+  analogWrite(3,0);
   digitalWrite(4,HIGH);
   analogWrite(5,63);
 }
