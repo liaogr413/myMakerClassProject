@@ -1,0 +1,300 @@
+<xml xmlns="https://www.motoduino.com/">
+  <workspace>
+    <field name="DEVICE">nano</field>
+    <field name="VERSION">6.5.0</field>
+  </workspace>
+  <block type="arduino_setup" id=";!.b_?zyS{AJjP4W9[)^" x="13" y="788">
+    <statement name="MyLoop">
+      <block type="procedures_callnoreturn" id="%Of8GJq=MRJe#0[Xmc1/">
+        <mutation name="Forward"></mutation>
+        <next>
+          <block type="delay_custom" id="B8suSmaD~QJ::lT0#e`;">
+            <value name="DELAY_TIME">
+              <block type="math_number" id="IY=W!;X~o%YO!iGk4:_;">
+                <field name="NUM">10000</field>
+              </block>
+            </value>
+            <next>
+              <block type="procedures_callnoreturn" id="hAUYrDd1N?:DwR%eI|Tj">
+                <mutation name="Stop"></mutation>
+                <next>
+                  <block type="delay_custom" id="hG?6Bj#^cw6hP)2B7M73">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="OEfgi.q,(MzV9]mLNIG!">
+                        <field name="NUM">2000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="Rg0N,y.Rps;R75_x@23O">
+                        <mutation name="Back"></mutation>
+                        <next>
+                          <block type="delay_custom" id="2`.#SGh6k3#p,+T:w::W">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="%t)7{Qo~7y|}Axz|X!Yw">
+                                <field name="NUM">10000</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="procedures_callnoreturn" id=",G^z?B,|e9-KEM^|;j]W">
+                                <mutation name="Stop"></mutation>
+                                <next>
+                                  <block type="delay_custom" id="Y*{IlQEL+{Z;(:VESmY3">
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id="sE@%1lIQUiWiOnSBwthL">
+                                        <field name="NUM">2000</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="procedures_callnoreturn" id="6RQj86--Yi^3aP)I0Ef1">
+                                        <mutation name="Left"></mutation>
+                                        <next>
+                                          <block type="delay_custom" id="_R86]9%;,@8*oe!nk84_">
+                                            <value name="DELAY_TIME">
+                                              <block type="math_number" id=".6Nv5qQ!p;wx{llW^3{m">
+                                                <field name="NUM">10000</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="procedures_callnoreturn" id="`5:6-4b~lUQM7|#^.Z(U">
+                                                <mutation name="Stop"></mutation>
+                                                <next>
+                                                  <block type="delay_custom" id="pZOVvm8pNWFC26j56JPW">
+                                                    <value name="DELAY_TIME">
+                                                      <block type="math_number" id="Il-dm/%B~_AHP(,e9~/0">
+                                                        <field name="NUM">2000</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="procedures_callnoreturn" id="4[RUQLDHNdR;CqpffAc%">
+                                                        <mutation name="Right"></mutation>
+                                                        <next>
+                                                          <block type="delay_custom" id="XFvWCyEI-;kR};0~`$7I">
+                                                            <value name="DELAY_TIME">
+                                                              <block type="math_number" id="b#cwp~svME}ofOA)DKG1">
+                                                                <field name="NUM">10000</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="procedures_callnoreturn" id="Xc[4AJ,EJgpuwxoOb!.r">
+                                                                <mutation name="Stop"></mutation>
+                                                                <next>
+                                                                  <block type="delay_custom" id="tFsB}ey3:QkPKyecHN4Z">
+                                                                    <value name="DELAY_TIME">
+                                                                      <block type="math_number" id="mV~Ij$jZpK3T|.*L;C(,">
+                                                                        <field name="NUM">2000</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="]8tOwZzd4f#kbG~}dXE." x="13" y="1313">
+    <field name="NAME">Forward</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id=",+ph@^|/k4+|a6C!*_1d">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_analog_write" id="d,pH5o$JQ7XfIj^a@+FM">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="math_number" id="jVt7IWDBZEL@,6o2jDI`">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="E?F|sZ4aecCNf$wOm]~w">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_analog_write" id="5s6sTNHd7fDoRNSW`}Be">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_number" id="{l3rx8x;]vkl+_)TmI){">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="XD=V10G)~@c7zczFN5d/" x="13" y="1513">
+    <field name="NAME">Stop</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="gWg,)+c=TI^z%1LQ|TjL">
+        <field name="PIN">2</field>
+        <field name="STAT">LOW</field>
+        <next>
+          <block type="inout_analog_write" id="x]Swe0$fQm`^Zslmjt_r">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="math_number" id="Xv,m71_EP}N1Qb|u[ab4">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="Z|Q#m!~XCw/958PAGd(m">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_analog_write" id="xTAZF~(PK7`~*K0k;6oV">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_number" id="f,~5d.GM3Sv37}k,_8ZG">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="%IE7PknB)1Ls$$LqP?DE" x="13" y="1713">
+    <field name="NAME">Right</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="T~c^^~1rLQCGU]ypF]cl">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_analog_write" id="P]}|{4.lV.=[5apuJfaj">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="math_number" id="*W`9RE(7o$e2nDmEk4~W">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="Xj-H;P0c/yndDw4KS*:|">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_analog_write" id=")Ye-DUl31_=k~`{G3dPf">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_number" id="$i*/Bs2btb{Vol7ep1xO">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="+}=}w8;/}+fq;oz?y39t" x="13" y="1913">
+    <field name="NAME">Left</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="r]i-mWEaIAT9bUgdl:/n">
+        <field name="PIN">2</field>
+        <field name="STAT">LOW</field>
+        <next>
+          <block type="inout_analog_write" id="xfH,EOa3Zl:r?*{8/#;E">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="math_number" id="i[u|~RvKC+$l?wNORPm!">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id=":d#rIWWW~E9.bm|8D?:6">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_analog_write" id="XWC%E?-el7V@ZCVA}3@=">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_number" id=";G--o4@YR,;X0N,)e_Zb">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="=i8I]A-bk=/`(/T3/l)u" x="13" y="2113">
+    <field name="NAME">Back</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="h=DLC:UW!q8MBRM+AZtc">
+        <field name="PIN">2</field>
+        <field name="STAT">LOW</field>
+        <next>
+          <block type="inout_analog_write" id="MWBuW=[7lv}cWk;j-x::">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="math_number" id="[Q-j[)vod%{AE.)B$_kk">
+                <field name="NUM">255</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="3AF(]SrlaSue71;Uc`#7">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_analog_write" id="(-$Qgg,!63$YXZfNYXZy">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_number" id="pJ+fPG)Yg|S!DnM}A?y?">
+                        <field name="NUM">255</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
