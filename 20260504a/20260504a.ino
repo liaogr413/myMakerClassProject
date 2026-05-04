@@ -25,10 +25,7 @@ void loop()
   Stop();
   delay(2000);
 }
-
-/**
- * 定義倒車
- */
+ // 定義倒車
 void Back()
 {
   digitalWrite(2,LOW);
@@ -36,9 +33,9 @@ void Back()
   digitalWrite(4,LOW);
   analogWrite(5,255);
 }
-/**
- * 定義前進
- */
+
+// 定義前進
+
 void Forward()
 {
   digitalWrite(2,HIGH);
@@ -46,9 +43,9 @@ void Forward()
   digitalWrite(4,HIGH);
   analogWrite(5,0);
 }
-/**
- * 定義停止
- */
+
+// 定義停止
+
 void Stop()
 {
   digitalWrite(2,LOW);
@@ -56,9 +53,9 @@ void Stop()
   digitalWrite(4,LOW);
   analogWrite(5,0);
 }
-/**
- * 定義右轉
- */
+
+// 定義右轉
+ 
 void Right() 
 {
   digitalWrite(2,HIGH);
@@ -66,9 +63,9 @@ void Right()
   digitalWrite(4,LOW);
   analogWrite(5,0);
 }
-/**
- * 定義左轉
- */
+
+// 定義左轉
+
 void Left()
 {
   digitalWrite(2,LOW);
