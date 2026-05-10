@@ -34,8 +34,7 @@ void forward(int Forward_pwm)
   digitalWrite(4,HIGH);
   analogWrite(5,(255 - Forward_pwm));
 }
-//定義後退
-//stop疑似撞名，加上func表自定義函式
+//定義後退(stop疑似撞名，加上func表自定義函式)
 void stop_func() 
 {
   digitalWrite(2,LOW);
@@ -67,8 +66,7 @@ void back(int back_pwm)
   digitalWrite(4,LOW);
   analogWrite(5,back_pwm);
 }
-//我懶得算毫秒
-//同delay_second疑似撞名，加上func表自定義函式
+//我懶得算毫秒(同delay_second疑似撞名，加上func表自定義函式)
 void delay_sec_func(int delay_s) 
 {
   delay((delay_s * 1000));
