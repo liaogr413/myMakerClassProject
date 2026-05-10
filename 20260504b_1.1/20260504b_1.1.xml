@@ -1,0 +1,452 @@
+<xml xmlns="https://www.motoduino.com/">
+  <workspace>
+    <field name="DEVICE">nano</field>
+    <field name="VERSION">6.5.0</field>
+  </workspace>
+  <variables>
+    <variable id="oY$lQg*+yRG7PqKw*VZ*">Forward_pwm</variable>
+    <variable id="~*~}1`a-C~@4)k]8?LB(">right_pwm</variable>
+    <variable id="`|kJui18!6}Qmo93$(Np">left_pwm</variable>
+    <variable id="Hzz1JTRB?KP?XCwz{:Uv">back_pwm</variable>
+    <variable id="4@UF+edW(tg#j{H4I]1A">delay_s</variable>
+  </variables>
+  <block type="procedures_defnoreturn" id="aOPqWGbm$`Q|k2U2]jcm" x="113" y="113">
+    <mutation>
+      <arg name="Forward_pwm" varid="oY$lQg*+yRG7PqKw*VZ*" vartype="int"></arg>
+    </mutation>
+    <field name="NAME">forward</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="@]#-i8rMogJx](UhOt%}">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_analog_write" id="Q1fL@ySs7*iCrG$U,y^u">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="math_arithmetic" id="0Ifi6f05_%YN_+@r+MNS">
+                <field name="OP">MINUS</field>
+                <value name="A">
+                  <shadow type="math_number" id=".}8jO4Cy;2-#7k%A/|Sq">
+                    <field name="NUM">255</field>
+                  </shadow>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="P9P3eHI#:Q=9)_hB*J-I">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id=")T7QxJ,IAE-QjO(rWiJt">
+                    <field name="VAR" id="oY$lQg*+yRG7PqKw*VZ*">Forward_pwm</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="7f(Ol.L+G1F#Ok%{}_-^">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_analog_write" id="7L/pD={bZ]Bki|b,::yj">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_arithmetic" id="00cC!jwL-+B|}!zAs8Ro">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <shadow type="math_number" id="FdM)VWZW~HFbe!J:(iFM">
+                            <field name="NUM">255</field>
+                          </shadow>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="wURDkR?csP4K[Oth,?o,">
+                            <field name="VAR" id="oY$lQg*+yRG7PqKw*VZ*">Forward_pwm</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="3?%]Y}Vi3waB1$zUE/r/" x="113" y="313">
+    <field name="NAME">stop_func</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="=KF|QKzp+Wo3`7gVbYTE">
+        <field name="PIN">2</field>
+        <field name="STAT">LOW</field>
+        <next>
+          <block type="inout_analog_write" id="Siv8pjYqVs[,Ow+2(*h_">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="math_number" id="[eZl)5t5Kv?;#HXhqYHt">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="[tNX!or2{6B-pzpE,+EF">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_analog_write" id="UO[0Bu6!k5MyT~?U2qjS">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_number" id="o~-`0H9?,)ilkP(dVi!I">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_setup" id="VT~/Zvj7%,BGAc)nivu@" x="662" y="313">
+    <statement name="MyLoop">
+      <block type="procedures_callnoreturn" id="vJG-N*XP$Iv{Uvyg0jqB">
+        <mutation name="forward">
+          <arg name="Forward_pwm"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="math_number" id="KVn|1WA~Z7*Us__BR)A!">
+            <field name="NUM">191</field>
+          </block>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="iDb#g-W%z.5~H)ow_A:%">
+            <mutation name="delay_sec_func">
+              <arg name="delay_s"></arg>
+            </mutation>
+            <value name="ARG0">
+              <block type="math_number" id="[{9M9GxO$$+JSLllMQT5">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+            <next>
+              <block type="procedures_callnoreturn" id="rrh]9|nAqrF|iX-(OlA*">
+                <mutation name="stop_func"></mutation>
+                <next>
+                  <block type="procedures_callnoreturn" id="B=0$bBl?w?ltLlE$Z+F8">
+                    <mutation name="delay_sec_func">
+                      <arg name="delay_s"></arg>
+                    </mutation>
+                    <value name="ARG0">
+                      <block type="math_number" id="zP3Nmicwl9gQJi|8N%/0">
+                        <field name="NUM">2</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="(A+?$/$Wjv.FvJMz4P@T">
+                        <mutation name="back">
+                          <arg name="back_pwm"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_number" id="bN*Jyj^pFx4Frec:r(DK">
+                            <field name="NUM">191</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="/f|VLf(hm%Hb7qCp;0]G">
+                            <mutation name="delay_sec_func">
+                              <arg name="delay_s"></arg>
+                            </mutation>
+                            <value name="ARG0">
+                              <block type="math_number" id="H7GX@IvSZ0)FXK%uua!Q">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="procedures_callnoreturn" id="$@qEJRRh!}._G^dLB|}D">
+                                <mutation name="stop_func"></mutation>
+                                <next>
+                                  <block type="procedures_callnoreturn" id="KZ/o5Q?RW4G.$N-?gUg~">
+                                    <mutation name="delay_sec_func">
+                                      <arg name="delay_s"></arg>
+                                    </mutation>
+                                    <value name="ARG0">
+                                      <block type="math_number" id="J}A;+XG#HeJ[Xb}I)@%-">
+                                        <field name="NUM">2</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="procedures_callnoreturn" id="Tw%QldPMB0V:Q]QQWoYK">
+                                        <mutation name="left">
+                                          <arg name="left_pwm"></arg>
+                                        </mutation>
+                                        <value name="ARG0">
+                                          <block type="math_number" id="0JIw*0];y,j@e}2,h%cA">
+                                            <field name="NUM">191</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="procedures_callnoreturn" id="xPcrImGjQ3cDj@%j#NH}">
+                                            <mutation name="delay_sec_func">
+                                              <arg name="delay_s"></arg>
+                                            </mutation>
+                                            <value name="ARG0">
+                                              <block type="math_number" id="P,q)n~xvH7ANrW29mH{R">
+                                                <field name="NUM">10</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="procedures_callnoreturn" id=",Ft[%5!eR1:kXGqG-14}">
+                                                <mutation name="stop_func"></mutation>
+                                                <next>
+                                                  <block type="procedures_callnoreturn" id="A%AjPi_=rRKOzZT2-ep*">
+                                                    <mutation name="delay_sec_func">
+                                                      <arg name="delay_s"></arg>
+                                                    </mutation>
+                                                    <value name="ARG0">
+                                                      <block type="math_number" id="V+Tq4#WAd}R-JM93KEWN">
+                                                        <field name="NUM">2</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="procedures_callnoreturn" id="g?~KsFZl/qyOTGl0gboG">
+                                                        <mutation name="right">
+                                                          <arg name="right_pwm"></arg>
+                                                        </mutation>
+                                                        <value name="ARG0">
+                                                          <block type="math_number" id="rb%aJZA@]LZsXl{yU{C{">
+                                                            <field name="NUM">191</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="procedures_callnoreturn" id="dlE:#EJ4AYir9L+NWQ54">
+                                                            <mutation name="delay_sec_func">
+                                                              <arg name="delay_s"></arg>
+                                                            </mutation>
+                                                            <value name="ARG0">
+                                                              <block type="math_number" id="o];)PXtD2C(*C3a:Mwyp">
+                                                                <field name="NUM">10</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="procedures_callnoreturn" id="fKik:I{r9VMA`p]@WFwm">
+                                                                <mutation name="stop_func"></mutation>
+                                                                <next>
+                                                                  <block type="procedures_callnoreturn" id="p5X~mqHGWxFXCPf{zLw5">
+                                                                    <mutation name="delay_sec_func">
+                                                                      <arg name="delay_s"></arg>
+                                                                    </mutation>
+                                                                    <value name="ARG0">
+                                                                      <block type="math_number" id="U7a-`MRNj4*tZ`Tior73">
+                                                                        <field name="NUM">2</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="z]|f=O~B6s5%~xrVG$.Q" x="113" y="488">
+    <mutation>
+      <arg name="right_pwm" varid="~*~}1`a-C~@4)k]8?LB(" vartype="int"></arg>
+    </mutation>
+    <field name="NAME">right</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="?VW0];)r$Hmg~!H8TPe*">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_analog_write" id="9h%]n4[R[.@nQcUwT|yg">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="math_arithmetic" id="@?71xw5GPEGP%J6T$a}3">
+                <field name="OP">MINUS</field>
+                <value name="A">
+                  <shadow type="math_number" id="Eu^V6oL4YIs_YiZUKo$Q">
+                    <field name="NUM">255</field>
+                  </shadow>
+                </value>
+                <value name="B">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="=6NW=R?0{D}Og%!-^cET">
+                    <field name="VAR" id="~*~}1`a-C~@4)k]8?LB(">right_pwm</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="@$mLv83Rq~wQ+vTzWYr8">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_analog_write" id="H2irzU/[D@MUJBuLTC/o">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_number" id="2q.3QfP?`+!8@FrU=7w}">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="-+D%Ekk`?lO=$A8szuAh" x="112" y="687">
+    <mutation>
+      <arg name="left_pwm" varid="`|kJui18!6}Qmo93$(Np" vartype="int"></arg>
+    </mutation>
+    <field name="NAME">left</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="GIc00T[b_?Do_rMJlm*s">
+        <field name="PIN">2</field>
+        <field name="STAT">LOW</field>
+        <next>
+          <block type="inout_analog_write" id="*Bmb;[o/K1V=T-^co0n5">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="math_number" id="N`TtjMqG4F7-9FA`{8;g">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="2$Y8nz9xC;1!@9d7~aO=">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_analog_write" id="z]T%~)(V!m`)FI-T,)DI">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_arithmetic" id="R,XMyhk|92bOMW96WBDp">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <shadow type="math_number" id="o`;Z2YB`4cwKm!nai+_C">
+                            <field name="NUM">255</field>
+                          </shadow>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="!~NgUZ0G*%@b9|v3#(vM">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="Kx/p1@+A*Y[+!:syvXlm">
+                            <field name="VAR" id="`|kJui18!6}Qmo93$(Np">left_pwm</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="NG4An3cD#+q)k{KCYe$l" x="112" y="888">
+    <mutation>
+      <arg name="back_pwm" varid="Hzz1JTRB?KP?XCwz{:Uv" vartype="int"></arg>
+    </mutation>
+    <field name="NAME">back</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="Cx`Mbf@kzjZZ]$b#{Nql">
+        <field name="PIN">2</field>
+        <field name="STAT">LOW</field>
+        <next>
+          <block type="inout_analog_write" id="h]bc1{~P@lAaLa$eHHRX">
+            <field name="PIN">3</field>
+            <value name="Value">
+              <block type="variables_get" id="b1oU?j:My#-LGQD{s0:5">
+                <field name="VAR" id="Hzz1JTRB?KP?XCwz{:Uv">back_pwm</field>
+              </block>
+            </value>
+            <next>
+              <block type="inout_digital_write" id="_Rv:p)/*3eI`ITkIEMUG">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_analog_write" id="ckfz]iL0y3(Qc8dKfXT,">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="variables_get" id="CPzDQt?HU%AJ|13[Vm^X">
+                        <field name="VAR" id="Hzz1JTRB?KP?XCwz{:Uv">back_pwm</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="e9QvicORJPNYc/nzW8/J" x="113" y="1063">
+    <mutation>
+      <arg name="delay_s" varid="4@UF+edW(tg#j{H4I]1A" vartype="int"></arg>
+    </mutation>
+    <field name="NAME">delay_sec_func</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="delay_custom" id="e*v|^+?8{Wqhf[$Wm0X`">
+        <value name="DELAY_TIME">
+          <block type="math_arithmetic" id="*`Ol=Qo`qJS1qV}Z(WkT">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <shadow type="math_number" id="6cw~i-#)c(:b-NK[u0}C">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="TM%?EKOb8jNrX1Y9eFb,">
+                <field name="VAR" id="4@UF+edW(tg#j{H4I]1A">delay_s</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="SkM-r]4g%E{pe2nks#HR">
+                <field name="NUM">1000</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
