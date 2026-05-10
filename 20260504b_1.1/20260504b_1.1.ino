@@ -8,21 +8,21 @@ void setup()
 void loop()
 {
   forward(191);
-  delay_second2(10);
+  delay_sec_func(10);
   stop_func();
-  delay_second2(2);
+  delay_sec_func(2);
   back(191);
-  delay_second2(10);
+  delay_sec_func(10);
   stop_func();
-  delay_second2(2);
+  delay_sec_func(2);
   left(191);
-  delay_second2(10);
+  delay_sec_func(10);
   stop_func();
-  delay_second2(2);
+  delay_sec_func(2);
   right(191);
-  delay_second2(10);
+  delay_sec_func(10);
   stop_func();
-  delay_second2(2);
+  delay_sec_func(2);
 }
 //75%出力
 //本版本改用函式積木+局域變數
@@ -67,8 +67,10 @@ void back(int back_pwm)
   digitalWrite(4,LOW);
   analogWrite(5,back_pwm);
 }
-//懶得算毫秒
-void delay_second2(int delay_second) 
+//我懶得算毫秒
+//同delay_second疑似撞名，加上func表自定義函式
+void delay_sec_func(int delay_s) 
 {
-  delay((delay_second * 1000));
+  delay((delay_s * 1000));
 }
+
