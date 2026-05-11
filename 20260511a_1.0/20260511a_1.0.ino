@@ -35,7 +35,7 @@ void GoL(int speedL)
   else if (speedL == 0) 
   {
     digitalWrite(2,LOW);
-    analogWrite(3,speedL);
+    analogWrite(3,0);
   } 
   else if (speedL < 0) 
   {
