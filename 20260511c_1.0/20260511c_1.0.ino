@@ -29,7 +29,7 @@ void Go(int speedL, int speedR)
   if (speedL > 0) 
   {
     digitalWrite(2,HIGH);
-    analogWrite(3,(255 - speedR));
+    analogWrite(3,(255 - speedL));
   } 
   else if (speedL == 0) 
   {
@@ -39,7 +39,7 @@ void Go(int speedL, int speedR)
   else if (speedL < 0) 
   {
     digitalWrite(2,LOW);
-    analogWrite(3,(0 - speedR));
+    analogWrite(3,(0 - speedL));
   }
   if (speedR > 0) 
   {
@@ -54,6 +54,6 @@ void Go(int speedL, int speedR)
   else if (speedR < 0) 
   {
     digitalWrite(4,LOW);
-    analogWrite(5,(0 - speedL));
+    analogWrite(5,(0 - speedR));
   }
 }
