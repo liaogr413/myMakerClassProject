@@ -1,0 +1,484 @@
+<xml xmlns="https://www.motoduino.com/">
+  <workspace>
+    <field name="DEVICE">uno</field>
+    <field name="VERSION">6.5.0</field>
+  </workspace>
+  <variables>
+    <variable id="8JFvRrb,9EK?:V7pk4X_">speedL</variable>
+    <variable id="lGq;go[VBSR1|`gU|aNM">speedR</variable>
+  </variables>
+  <block type="arduino_setup" id="%`/Cfn6,;ZXh:z1w@yEb" x="187" y="388">
+    <statement name="MyLoop">
+      <block type="procedures_callnoreturn" id="|ojNiY:Ry^WnT(C(89iY">
+        <mutation name="Go">
+          <arg name="speedL"></arg>
+          <arg name="speedR"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="math_number" id="(Bji}yOq{mJdzfTQ+99}">
+            <field name="NUM">255</field>
+          </block>
+        </value>
+        <value name="ARG1">
+          <block type="math_number" id="9JN~Y)U@_D{8w}V2@}Xc">
+            <field name="NUM">255</field>
+          </block>
+        </value>
+        <next>
+          <block type="delay_custom" id="h)6I=@Hx~HwWSYw780P|">
+            <value name="DELAY_TIME">
+              <block type="math_number" id="hS`%6Ga`4[yT{f|pGRAQ">
+                <field name="NUM">10000</field>
+              </block>
+            </value>
+            <next>
+              <block type="procedures_callnoreturn" id="DA[leAIQXXN@d:/|3kA:">
+                <mutation name="Go">
+                  <arg name="speedL"></arg>
+                  <arg name="speedR"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="math_number" id="p$`Icx{ub}FoJo{LVrv`">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="ARG1">
+                  <block type="math_number" id="(/]wyOJmW.Z-xm:%BP%P">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="+q;df($y?}Ayui6BbsBi">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="~3woIAmU8$#HvnrS:Fab">
+                        <field name="NUM">2000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="procedures_callnoreturn" id="0-p*%}s^B~6KoN-:Ej|R">
+                        <mutation name="Go">
+                          <arg name="speedL"></arg>
+                          <arg name="speedR"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="math_number" id="#~e{X[lvT4O%G1sBd96u">
+                            <field name="NUM">-255</field>
+                          </block>
+                        </value>
+                        <value name="ARG1">
+                          <block type="math_number" id="+w4CcY%/(NK7}gwJDo0!">
+                            <field name="NUM">-255</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="WN?5Wv+77%m_k^iryNqS">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="=|cV@K[+#mZ6ek2qA/@_">
+                                <field name="NUM">10000</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="procedures_callnoreturn" id="k@e4C.0^_~h8XWARjSLP">
+                                <mutation name="Go">
+                                  <arg name="speedL"></arg>
+                                  <arg name="speedR"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                  <block type="math_number" id="@kLiepeM0E?]pg@z:h4b">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="ARG1">
+                                  <block type="math_number" id="#kY*FPOiAF8o1asgDJp{">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="delay_custom" id="/_eppIn!BjMT$j6Q6v3b">
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id="5s7MfFc)u^J,!QdQ?B;h">
+                                        <field name="NUM">2000</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="procedures_callnoreturn" id="y1voC2Kd1Tijp]y$}f7N">
+                                        <mutation name="Go">
+                                          <arg name="speedL"></arg>
+                                          <arg name="speedR"></arg>
+                                        </mutation>
+                                        <value name="ARG0">
+                                          <block type="math_number" id="#!I(}JR9$Gp~m,MJxxgD">
+                                            <field name="NUM">255</field>
+                                          </block>
+                                        </value>
+                                        <value name="ARG1">
+                                          <block type="math_number" id="L$n9!rmCF]z,b^XMiGUq">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="delay_custom" id="[~|sA%KNkoXE6ksWIQE6">
+                                            <value name="DELAY_TIME">
+                                              <block type="math_number" id="Z7?5#lV^OaXsPc/p.[s.">
+                                                <field name="NUM">10000</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="procedures_callnoreturn" id="@1I2^GEj.FK/,x0K;m5g">
+                                                <mutation name="Go">
+                                                  <arg name="speedL"></arg>
+                                                  <arg name="speedR"></arg>
+                                                </mutation>
+                                                <value name="ARG0">
+                                                  <block type="math_number" id="^[(+p/70IL]?Tf08K`Zr">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ARG1">
+                                                  <block type="math_number" id="6VvbRKM2[$e9-P+bh{P*">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="delay_custom" id="~49n^?1ToJroL~!/?WZ{">
+                                                    <value name="DELAY_TIME">
+                                                      <block type="math_number" id="SyF$gk=4S$kLx:/((9%p">
+                                                        <field name="NUM">2000</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="procedures_callnoreturn" id="sS(I/A`9G%fRs-FnySJV">
+                                                        <mutation name="Go">
+                                                          <arg name="speedL"></arg>
+                                                          <arg name="speedR"></arg>
+                                                        </mutation>
+                                                        <value name="ARG0">
+                                                          <block type="math_number" id="XR-fA+(m.|!AS,C#VKrP">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="ARG1">
+                                                          <block type="math_number" id="sm~$|gUo*-*0~Zvj@f4r">
+                                                            <field name="NUM">255</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="delay_custom" id="cVZK35ZAsFCkiZOC?1u#">
+                                                            <value name="DELAY_TIME">
+                                                              <block type="math_number" id="D19(_(a[=TDiu_|Kv_`}">
+                                                                <field name="NUM">10000</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="procedures_callnoreturn" id="K#NfWg,=x!;-{?_P4Y@s">
+                                                                <mutation name="Go">
+                                                                  <arg name="speedL"></arg>
+                                                                  <arg name="speedR"></arg>
+                                                                </mutation>
+                                                                <value name="ARG0">
+                                                                  <block type="math_number" id="dXgqK_~lx]ykBEY8Qu8)">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ARG1">
+                                                                  <block type="math_number" id="71J~,[yyF5nlSz^nGf`/">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="delay_custom" id="jth+!Uz]ubvIKx@q)@jk">
+                                                                    <value name="DELAY_TIME">
+                                                                      <block type="math_number" id="otKJCa;OpksVn5Vyto-p">
+                                                                        <field name="NUM">2000</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="3BV!ADvy00sy1tzr+Q[~" x="744" y="808">
+    <mutation>
+      <arg name="speedL" varid="8JFvRrb,9EK?:V7pk4X_" vartype="int"></arg>
+      <arg name="speedR" varid="lGq;go[VBSR1|`gU|aNM" vartype="int"></arg>
+    </mutation>
+    <field name="NAME">Go</field>
+    <comment pinned="false" h="80" w="160">描述此函式...</comment>
+    <statement name="STACK">
+      <block type="controls_if" id="Wvstjy8B[D|.rCE%10NC">
+        <mutation elseif="2"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="7w?Bx(`,*C|kmvkA!58!">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="variables_get" id="w`t!a(!|{;?XvG`]h?P~">
+                <field name="VAR" id="8JFvRrb,9EK?:V7pk4X_">speedL</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="Nob@5Z9^C^=jrWZDc3~}">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="inout_digital_write" id="*k0Ee#;S]#dhQr~)|4T7">
+            <field name="PIN">2</field>
+            <field name="STAT">HIGH</field>
+            <next>
+              <block type="inout_analog_write" id="q%FT_@a|oir$)jU5{cS/">
+                <field name="PIN">3</field>
+                <value name="Value">
+                  <block type="math_arithmetic" id="XyH`HaO@b_eTL?a7[~{E">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <shadow type="math_number" id="AWQUTP|nPk*c]pjTf)(D">
+                        <field name="NUM">255</field>
+                      </shadow>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="as_TTJQlM3ibMX(v@Dze">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="P1]I*}+0j!IB??Mqi/|y">
+                        <field name="VAR" id="8JFvRrb,9EK?:V7pk4X_">speedL</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare" id="OE(V~*#Z[UqzQX$ZKwcX">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="Onc)lGJa|6hKHpjY93ia">
+                <field name="VAR" id="8JFvRrb,9EK?:V7pk4X_">speedL</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="0;8{D_]?xfrxBFPk7qFG">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="inout_digital_write" id="PHKzVjG5fo(tf)!PuqMs">
+            <field name="PIN">2</field>
+            <field name="STAT">LOW</field>
+            <next>
+              <block type="inout_analog_write" id="wvF%W:tNa^Y_[+~!G1t$">
+                <field name="PIN">3</field>
+                <value name="Value">
+                  <block type="math_number" id="b[dzYc)0Nl-G4wLPYI0C">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <value name="IF2">
+          <block type="logic_compare" id="koA@!fiW|o8:i|$@n=sI">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="variables_get" id="]b*1ZYIH?w1@Mg,gFBMp">
+                <field name="VAR" id="8JFvRrb,9EK?:V7pk4X_">speedL</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="p|O|#k?gvl];p]?MopC^">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="inout_digital_write" id="Z4?g#EPLdSqwKS(w!Y}`">
+            <field name="PIN">2</field>
+            <field name="STAT">LOW</field>
+            <next>
+              <block type="inout_analog_write" id="QdhF;y?RraLVg$,X*-X{">
+                <field name="PIN">3</field>
+                <value name="Value">
+                  <block type="math_arithmetic" id="~]{.ZL)hIJbgLira,n}i">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <shadow type="math_number" id="}i/0q`UB+OY*7qnkCG[Q">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="98xU]X@6mO96sS![-2!t">
+                        <field name="VAR" id="lGq;go[VBSR1|`gU|aNM">speedR</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="l~|-;*c.xjN?hQXim)Qf">
+            <mutation elseif="2"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="}EU$5E(RF1oh*g7.p6f_">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="variables_get" id="4iT?:sm=Qibt:J91RCsc">
+                    <field name="VAR" id="lGq;go[VBSR1|`gU|aNM">speedR</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="UDX8LE@Z2WTJZn7.R`|e">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="inout_digital_write" id="Z{aZp/IP$,?v]4LO9;%3">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_analog_write" id=",WTYd=cX~(L5L1N}4{Mb">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_arithmetic" id="cg1pJx%~w=?7}~{w-hb0">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <shadow type="math_number" id="Q)0Dmg{`mB_MP0e##7w/">
+                            <field name="NUM">255</field>
+                          </shadow>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="85SU%oJ3CFSe!ld8(0dG">
+                            <field name="VAR" id="lGq;go[VBSR1|`gU|aNM">speedR</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="$C2I45rp(p2VXk|C^ujc">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="pf0L:Gcyf/4+Mx61+30B">
+                    <field name="VAR" id="lGq;go[VBSR1|`gU|aNM">speedR</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="1H*m5B$UchhHylSq`,_C">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="inout_digital_write" id="pcHhIOsLW1R_#}arRsL4">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_analog_write" id="GTiNNlIazhy{j,4.3XO@">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_number" id=".6pF_d]Rf*v(=p%:EyQp">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <value name="IF2">
+              <block type="logic_compare" id="qSi`V?K4Uw~FNusX+7C9">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="variables_get" id="ld|C0q-X2*p|#5~Si)GO">
+                    <field name="VAR" id="lGq;go[VBSR1|`gU|aNM">speedR</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="mjq/E~)^EnP^-QA6Ys/8">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO2">
+              <block type="inout_digital_write" id="zZ4=d,1z~9+pd`_3Qg+y">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_analog_write" id="pqFt)]!v|31aVr+1E7se">
+                    <field name="PIN">5</field>
+                    <value name="Value">
+                      <block type="math_arithmetic" id="cTkuB*T|1x}*z+)~k{pv">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <shadow type="math_number" id="0o{Y%t6C}qQ@^~Zj+1Cd">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="L(6rXT_@yyeN?F{1-RDp">
+                            <field name="VAR" id="lGq;go[VBSR1|`gU|aNM">speedR</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
