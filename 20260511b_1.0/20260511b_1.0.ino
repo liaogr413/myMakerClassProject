@@ -25,13 +25,13 @@ void GoL(int speedL)
 {
   if (speedL > 0) 
   {
-    //出力較低時克服靜摩擦力
+    //出力較低時進行出力補償
     if (speedL < 150) 
     {
       digitalWrite(2,HIGH);
-      analogWrite(3,(255 - 150));
+      analogWrite(3,(255 - 200));
       digitalWrite(4,HIGH);
-      analogWrite(5,(255 - 150));
+      analogWrite(5,(255 - 200));
       delay(60);
     }
     digitalWrite(2,HIGH);
