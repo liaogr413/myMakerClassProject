@@ -7,15 +7,7 @@ void setup()
 }
 void loop()
 {
-  GoL(255);
-  delay(10000);
-  GoL(127);
-  delay(10000);
-  GoL(0);
-  delay(2000);
-  GoL(-127);
-  delay(10000);
-  GoL(-255);
+  GoL(100);
   delay(10000);
   GoL(0);
   delay(2000);
