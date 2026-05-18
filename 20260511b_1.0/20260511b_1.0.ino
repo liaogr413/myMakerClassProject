@@ -32,7 +32,7 @@ void GoL(int speedL)
       analogWrite(3,(255 - 200));
       digitalWrite(4,HIGH);
       analogWrite(5,(255 - 200));
-      delay(60);
+      delay(150);
     }
     digitalWrite(2,HIGH);
     analogWrite(3,(255 - speedL));
